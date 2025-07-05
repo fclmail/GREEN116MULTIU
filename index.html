@@ -322,9 +322,10 @@
     document.getElementById("scanNow").onclick = async function () {
       if (scanIntervalId) clearInterval(scanIntervalId);
       const interval = parseInt(document.getElementById("scanInterval").value, 10) * 1000;
-      scanIntervalId = setInterval(performScan, interval);
-      await performScan(); // initial scan right away
+      scanIntervalId = setInterval(() => performScan(), interval);
+      performScan();
     };
   </script>
 </body>
 </html>
+
